@@ -1,0 +1,51 @@
+<%= form_for(@constituency) do |f| %>
+  <% if @constituency.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@constituency.errors.count, "error") %> prohibited this constituency from being saved:</h2>
+
+      <ul>
+      <% @constituency.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+   <%= f.hidden_field :mandate_number, :value => @mandate_number %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :authorized_number, :value => @authorized_number %>
+  </div>
+  <div class="field">
+    <%= f.label :empty_votes %><br>
+    <%= f.number_field :empty_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :many_votes %><br>
+    <%= f.number_field :many_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :other_votes %><br>
+    <%= f.number_field :other_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :given_cards %><br>
+    <%= f.number_field :given_cards %>
+  </div>
+  <div class="field">
+    <%= f.label :returned_cards %><br>
+    <%= f.number_field :returned_cards %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :voivodeship_id, :value => @voivodeship_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

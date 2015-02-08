@@ -1,0 +1,11 @@
+<%= form_for @user do |f| %>
+    <p>
+      <%= f.label :constituency %> <br />
+      <%= f.select ("constituency", "constituency_id", Constituency.all.collect {|con| [ con.name, con.id ] }, {prompt: 'Select Constituency'})%>
+
+    <p><%= f.submit "Submit" %> </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
+

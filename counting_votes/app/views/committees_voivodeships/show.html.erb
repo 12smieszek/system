@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Committee:</strong>
+  <%= @committees_voivodeship.committee %>
+</p>
+
+<p>
+  <strong>Voivodeship:</strong>
+  <%= @committees_voivodeship.voivodeship %>
+</p>
+
+<%= link_to 'Edit', edit_committees_voivodeship_path(@committees_voivodeship) %> |
+<%= link_to 'Back', committees_voivodeships_path %>

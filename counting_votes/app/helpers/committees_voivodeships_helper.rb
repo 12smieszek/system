@@ -1,0 +1,2 @@
+module CommitteesVoivodeshipsHelper
+end

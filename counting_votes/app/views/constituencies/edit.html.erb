@@ -1,0 +1,43 @@
+<h1>Add voting result</h1>
+
+
+  <h2><%= @constituency.name %></h2>
+  <div class="field">
+    <%= f.label :committee %><br>
+    <%= f.select :committee, options_for_select(Committee.all.map{|u| ["#{u.name}", u.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :constituency_id, :value => @constituency.id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :mandate_number, :value => @mandate_number %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :authorized_number, :value => @authorized_number %>
+  </div>
+  <div class="field">
+    <%= f.label :empty_votes %><br>
+    <%= f.number_field :empty_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :many_votes %><br>
+    <%= f.number_field :many_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :other_votes %><br>
+    <%= f.number_field :other_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :given_cards %><br>
+    <%= f.number_field :given_cards %>
+  </div>
+  <div class="field">
+    <%= f.label :returned_cards %><br>
+    <%= f.number_field :returned_cards %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :voivodeship_id, :value => @voivodeship.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>

@@ -1,0 +1,14 @@
+<ul id="mainmenu">
+  <li><%= link_to "Strona Główna", :root %></li>
+  <% if current_user %>
+      <li><a href="">Profil</a><i class="arrow"></i>
+        <ul>
+          <li><%= link_to "Edytuj profil", edit_user_path(current_user.id) %></li>
+          <li><%= link_to "Fill the form", edit_user_path(current_user.id) %></li>
+        </ul>
+      </li>
+      <li><%= link_to "Wyloguj", :logout %></li>
+  <% else %>
+      <li><%= link_to "Zaloguj się", :login %></li>
+  <% end %>
+</ul>
